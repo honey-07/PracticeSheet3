@@ -1,23 +1,37 @@
-//Write a C++ Program to add, subtract, multiply and divide two numbers using class template.
-
+/* Write a C++ Program to print the average of three numbers entered by the
+user by creating a class named 'Average' having a function to calculate and
+print the average with object of a class.
+*/
 #include<iostream>
 using namespace std;
-
-template<class t,class t2>
-class operation
+class average
 {
-
 public:
-	void operations(t n1,t2 n2)
+	int avg;
+
+	void getdata()
 	{
-		cout << "ADDITION IS : " << n1 + n2 << endl;
-		cout << "SUBSTRACTION IS : " << n1 - n2 << endl;
-		cout << "MULTIPLICATION IS : " << n1 * n2 << endl;
-		cout << "DIVISION IS : " << n1 / n2 << endl;
+		
+	}
+	void calculation(int n1, int n2, int n3)
+	{
+		avg=(n1+n2+n3)/3;
+	}
+	void display()
+	{
+		cout <<"averahe is : " << avg;
 	}
 };
+
 int main()
-{	operation<int,float>ob;
-	ob.operations(7,11.9);
+{
+	int n1,n2,n3;
+	average a;
+	cout << "enter 3 numbers ";
+		cin >> n1 >> n2 >> n3;
+
+		a.calculation(n1,n2,n3);
+		a.display();
+
 return 0;
 }
