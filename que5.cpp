@@ -1,34 +1,17 @@
-// Write a program to create a function template for finding minimum value contained in an array.
+// Write a C++ program to find Square of a Number using inline function.
 
 #include<iostream>
 using namespace std;
-template<class t>
 
-t min(t a[],t s)
+inline int square(int n)
 {
-  t min=a[0];
-		for (int i = 1; i < s; i++)
-		{		
-			if(min > a[i]){
-			min=a[i];
-			}	
-		}
-		cout << "MINIMUM NUMBER FROM ARRAY IS : " << min;
+	cout << "Square of " << n << " is " << n*n << endl;
 }
-
 int main()
-
 {
-	int a[30],s;
-	cout << "Enter size: ";
-	cin >> s;
-
-	cout << "Enter array elements : ";
-
-	for (int i = 0; i < s; i++)
-	{
-		cin >> a[i];
-	}
-	min(a,s);
-return 0;	
+	int n;
+	cout << "enter any number";
+	cin >> n;
+	square(n);
+return 0;
 }
