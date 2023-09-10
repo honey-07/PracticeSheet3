@@ -1,98 +1,39 @@
-/* Write a C++ Program to perform following-
-• compare two strings
-• concate two strings
-• copy the string
-• find length of string
-• Count the number of words and characters in a
-sentence.
+/* Write a C++ Program to list a prime numbers between given range.
+Note: Take the range from user.
 */
-#include <iostream>
-#include <string>
+
+#include<iostream>
 using namespace std;
 
 int main()
 {
-	int choice;
+	int start,end;
+	cout << "Enter the range : ";
+	cin >> start >> end;
 
-	cout << "Enter your choice : ";
-	cin >> choice;
+	
 
-	cin.ignore();
-	switch(choice)
-	{
-		case 1:
-			{
-				string str,str2;
-				cout << "Enter string 1 : ";
-				cin >> str;
-				cout << "Enter string 2 : ";
-				cin >> str2;
+	for (int temp=start; temp<=end; temp++)
+		{
+			int flag=0;
 
-				if(str==str2)
-					cout<< "BOTH THE STRINGS ARE EQUAL" << endl;
-				else
-					cout<< "BOTH THE STRINGS ARE NOT EQUAL" << endl;
-			}
-			break;
-		case 2:
+			if(start>1)
 			{
-				string str,str2;
-				cout << "Enter string 1 : ";
-				cin >> str;
-				cout << "Enter string 2 : ";
-				cin >> str2;
-
-				str.append(str2);
-				cout << "STRING IS : " << str;
-			}
-			break;	
-		case 3:
-			{
-				string str;
-				cout << "Enter string : ";
-				getline(cin, str);
-				char str2[15];
-				str.copy(str2,5,3);
-				cout << "STRING IS : "<< str2;
-				
-			}	
-			break;
-		case 4:
-			{
-				string str;
-				cout << "Enter string : ";
-				getline(cin, str);
-				cout << "LENGTH OF STRING IS : "<< str.length();
-			}	
-			break;
-		case 5:
-			{
-				string sentence;
-				int word=0,character=0;
-
-				cout << "Enter string : ";
-				getline(cin, sentence);
-				
-				for(char c : sentence)
-				{
-					if(c==' ')
+		
+				for(int i=2; i<temp; i++)
+				{	
+					if(temp%i==0)
 					{
-						word++;
-					}
-					else
-					{
-						character++;
+					flag=1;
+				    break;
 					}
 				}
-				word++;
-				cout << "TOTAL WORDS : " << word << endl;
-				cout << "TOTAL CHARACTERS : " << character << endl;
+			if (flag==0)
+				cout << temp << " ";
+			
 			}
-			break;
 
-		default:
-			cout << "INVALID CHOICE.";
-			break;
-	}
-	return 0;
+		}
+	
+return 0;
 }
