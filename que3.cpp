@@ -1,27 +1,19 @@
-/* Write a C++ Program to display largest among two numbers using function template.
- Pass Integer, Float as parameter to the function template.*/
+/* Write a C++ Program to create a class named 'Student' with a string variable
+'name' and an integer variable 'roll_no'. Assign the value of roll_no as '2' and
+that of name as "John" by creating an object of the class Student. */
 
-#include<iostream>
+#include <iostream>
 using namespace std;
-
-template<class t1, class t2>
-void display(t1 n1,t2 n2)
+class student
 {
-	if(n1 > n2)
-		cout << "LARGEST NUMBER IS : " << n1;
-	else
-		cout << "LARGEST NUMBER IS : "<< n2;
-}
-
+    public:
+    string name;
+    int roll;
+};
 int main()
 {
-	int n1;
-	float n2;
-	cout << "Enter integer number : ";
-	cin >> n1;
-	cout << "Enter float number : ";
-	cin >> n2;
-
-	display(n1,n2);
-return 0;	
+    student s1;
+    s1.name="john";
+    s1.roll=2;
+    cout << s1.name << endl << s1.roll << endl;
 }
